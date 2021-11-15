@@ -3,6 +3,7 @@ package com.victordevs.composenotes.feature_notes.domain.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.victordevs.composenotes.ui.theme.*
+import java.lang.Exception
 
 // Created by Victor Hernandez on 12/11/21.
 // Proyect Compose Notes
@@ -20,3 +21,5 @@ data class Note(
         val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink,Yellow)
     }
 }
+
+class InvalidNoteException(message:String):Exception(message)
