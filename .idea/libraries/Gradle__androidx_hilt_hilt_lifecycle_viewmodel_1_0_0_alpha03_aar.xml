@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/36c4375966f8ae49eaa468d48eec0d01/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/36c4375966f8ae49eaa468d48eec0d01/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/36c4375966f8ae49eaa468d48eec0d01/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9210fe2dfd0ab8c4bd77a1989f1ee773/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9210fe2dfd0ab8c4bd77a1989f1ee773/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9210fe2dfd0ab8c4bd77a1989f1ee773/transformed/jetified-hilt-lifecycle-viewmodel-1.0.0-alpha03/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
