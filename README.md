@@ -13,7 +13,7 @@ project from Android Studio following the steps
 
 Preview
 -----------
-![Screenshot](screenshots/login.png)![Screenshot](screenshots/register.png)
+![Screenshot](screenshots/home.png)![Screenshot](screenshots/add.png)
 
 
 
