@@ -1,14 +1,17 @@
 package com.victordevs.composenotes.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.victordevs.composenotes.feature_notes.data.data_source.NoteDataBase
 import com.victordevs.composenotes.feature_notes.data.repository.NoteRepositoryImpl
 import com.victordevs.composenotes.feature_notes.domain.repository.NoteRepository
 import com.victordevs.composenotes.feature_notes.domain.use_case.*
+import com.victordevs.composenotes.feature_notes.presentation.util.ResourceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -38,11 +41,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNoteUsesCases(repository:NoteRepository):NoteUsesCases{
+    fun provideResources(@ApplicationContext appContext: Context) : ResourceManager = ResourceManager(appContext)
+
+    @Provides
+    @Singleton
+    fun provideNoteUsesCases(
+        repository:NoteRepository,
+        resourceManager: ResourceManager
+    ):NoteUsesCases{
         return NoteUsesCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository),
+            addNote = AddNote(repository,resourceManager),
             getNote = GetNote(repository)
         )
     }

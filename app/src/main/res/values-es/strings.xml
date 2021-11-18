@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">Compose Notes</string>
+  <string name="your_notes">Tus Notas</string>
+  <string name="title">Titulo</string>
+  <string name="date">Fecha</string>
+  <string name="color">Color</string>
+  <string name="ascending">Ascendente</string>
+  <string name="descending">Descendente</string>
+  <string name="hint_title">Ingresa tu titulo...</string>
+  <string name="hint_content">Ingresa tu nota</string>
+  <string name="delete_note">Note Eliminada</string>
+  <string name="restore">Restaurar</string>
+  <string name="error_save">No se pudo Guardar la Nota</string>
+  <string name="error_empty">El titulo y contenido de la nota no puede ir vacio</string>
+</resources>

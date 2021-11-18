@@ -7,9 +7,11 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.victordevs.composenotes.R
 import com.victordevs.composenotes.feature_notes.domain.model.InvalidNoteException
 import com.victordevs.composenotes.feature_notes.domain.model.Note
 import com.victordevs.composenotes.feature_notes.domain.use_case.NoteUsesCases
+import com.victordevs.composenotes.feature_notes.presentation.util.ResourceManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -23,19 +25,25 @@ import javax.inject.Inject
 @HiltViewModel
 class AddEditNoteViewModel @Inject constructor(
     private val noteUsesCases: NoteUsesCases,
+    resourceManager: ResourceManager,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
+
+    private val hintTitle = resourceManager.getString(R.string.hint_title)
+    private val hintContent = resourceManager.getString(R.string.hint_content)
+    private val errorEmpty = resourceManager.getString(R.string.error_save)
+
     private val _noteTitle = mutableStateOf(
         NoteTextFieldState(
-            hint = "Enter title..."
+            hint = hintTitle
         )
     )
     val noteTitle: State<NoteTextFieldState> = _noteTitle
 
     private val _noteContent = mutableStateOf(
         NoteTextFieldState(
-            hint = "Enter some content"
+            hint = hintContent
         )
     )
     val noteContent: State<NoteTextFieldState> = _noteContent
@@ -116,7 +124,7 @@ class AddEditNoteViewModel @Inject constructor(
                     } catch (e: InvalidNoteException) {
                         _eventFlow.emit(
                             UiEvent.ShowSnackBar(
-                                message = e.message ?: "Couldn't save note"
+                                message = e.message ?: errorEmpty
                             )
                         )
                     }
